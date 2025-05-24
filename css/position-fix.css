@@ -1,0 +1,38 @@
+/* Fix for terminal positioning issue - keeps original design */
+.hero-content-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  min-height: 80vh;
+}
+
+.hero-content-wrapper .desktop-only {
+  width: 50%;
+}
+
+.hero-content-wrapper .terminal-container {
+  position: relative !important;
+  display: block !important;
+  width: 45% !important;
+  margin-top: 150px !important;
+  right: auto !important;
+  top: auto !important;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+  .hero-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-content-wrapper .desktop-only {
+    width: 100%;
+  }
+  
+  .hero-content-wrapper .terminal-container {
+    width: 90% !important;
+    margin-top: 2rem !important;
+  }
+}

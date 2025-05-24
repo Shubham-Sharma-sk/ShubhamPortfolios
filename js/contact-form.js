@@ -130,7 +130,8 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Sending form data:', formData);
         
         // Send to API server
-        fetch('http://localhost:3000/send-email', {
+        // Use relative URL for both local and production environments
+        fetch('/send-email', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -442,7 +443,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Function to check if the server is running
   window.checkServer = function() {
-    fetch('http://localhost:3000/api/test')
+    // Use relative URL for both local and production environments
+    fetch('/api/test')
       .then(response => response.json())
       .then(data => {
         console.log('Server status:', data);

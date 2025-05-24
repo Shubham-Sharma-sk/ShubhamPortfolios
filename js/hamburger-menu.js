@@ -1,7 +1,21 @@
 // Hamburger menu functionality
 document.addEventListener('DOMContentLoaded', function() {
+  // Delay initialization to ensure components are loaded
+  setTimeout(function() {
+    initHamburgerMenu();
+  }, 300);
+});
+
+function initHamburgerMenu() {
   const hamburger = document.getElementById('hamburger-component');
   const navMenu = document.getElementById('navbar-tabs');
+  
+  // Exit if elements don't exist (prevents errors)
+  if (!hamburger || !navMenu) {
+    console.log('Hamburger menu elements not found, skipping initialization');
+    return;
+  }
+  
   const navLinks = document.querySelectorAll('.navbar-tabs-ul li');
   
   // Add animation delay to each nav item
@@ -25,6 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Close menu when clicked outside
   document.addEventListener('click', function(event) {
+    // Check if elements exist before using contains method
+    if (!navMenu || !hamburger) return;
+    
     const isClickInside = navMenu.contains(event.target) || hamburger.contains(event.target);
     
     if (!isClickInside && navMenu.classList.contains('active')) {
@@ -32,4 +49,4 @@ document.addEventListener('DOMContentLoaded', function() {
       navMenu.classList.remove('active');
     }
   });
-});
+}

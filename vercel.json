@@ -3,6 +3,7 @@
   "builds": [
     { "src": "server.js", "use": "@vercel/node" },
     { "src": "*.html", "use": "@vercel/static" },
+    { "src": "*.js", "use": "@vercel/static", "config": { "excludeFiles": "server.js" } },
     { "src": "css/**", "use": "@vercel/static" },
     { "src": "js/**", "use": "@vercel/static" },
     { "src": "components/**", "use": "@vercel/static" },

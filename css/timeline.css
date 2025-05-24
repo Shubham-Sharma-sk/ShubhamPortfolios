@@ -1,0 +1,132 @@
+e/* Timeline styling for GitHub-like animated timeline */
+.experience-timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+/* Main timeline vertical line */
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 12px;
+  width: 2px;
+  background: linear-gradient(to bottom, 
+    rgba(128, 0, 255, 0.3) 0%, 
+    rgba(0, 255, 255, 0.7) 50%, 
+    rgba(128, 0, 255, 0.3) 100%);
+  animation: pulseTimeline 3s infinite;
+}
+
+/* Timeline dots/markers */
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #1a1a1a;
+  border: 2px solid rgba(0, 255, 255, 0.7);
+  box-shadow: 0 0 0 4px rgba(26, 26, 26, 0.9);
+  z-index: 1;
+  transform: translateX(0);
+  transition: all 0.3s ease;
+}
+
+/* Active dot animation */
+.timeline-dot.active {
+  background-color: #8000ff;
+  box-shadow: 0 0 10px 2px rgba(0, 255, 255, 0.5);
+  animation: pulseGlow 2s infinite;
+}
+
+/* Dot hover effect */
+.timeline-dot:hover {
+  transform: scale(1.2);
+  border-color: #8000ff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+/* Timeline card positioning */
+.experience-card {
+  position: relative;
+  margin-bottom: 50px;
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover .timeline-dot {
+  transform: scale(1.2);
+  border-color: #8000ff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 5px 2px rgba(0, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 15px 2px rgba(128, 0, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px 2px rgba(0, 255, 255, 0.5);
+  }
+}
+
+@keyframes pulseTimeline {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .experience-timeline {
+    padding-left: 30px;
+  }
+  
+  .experience-timeline::before {
+    left: 9px;
+  }
+  
+  .timeline-dot {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Cursor trail effect */
+.cursor-trail {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(128, 0, 255, 0.5);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+  transform: translate(-50%, -50%);
+  animation: trailFade 1s linear infinite;
+}
+
+@keyframes trailFade {
+  0% {
+    width: 15px;
+    height: 15px;
+    opacity: 0.7;
+  }
+  100% {
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+  }
+}

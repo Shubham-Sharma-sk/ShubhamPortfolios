@@ -1,0 +1,344 @@
+/* Hero Section Terminal Styles */
+.hero-content-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  min-height: 80vh;
+  padding-left: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.text-content {
+  flex: 1;
+  z-index: 1;
+  margin-left: 3%;
+}
+
+.terminal-container {
+  width: 45%;
+  max-width: 600px;
+  padding-right: 2rem;
+  height: auto;
+  margin-top: 2rem;
+  position: absolute;
+  right: 5%;
+  top: 10%;
+  z-index: 10;
+}
+
+/* Terminal positioning */
+.terminal-container {
+  position: absolute;
+  width: 55%; /* Increased from 45% */
+  max-width: 700px; /* Increased from 600px */
+  right: 2%;
+  top: 20%; /* Moved down from 15% */
+  z-index: 100;
+}
+
+@media screen and (max-width: 768px) {
+  .terminal-container {
+    position: relative;
+    width: 100%; /* Increased from 95% */
+    margin: 3rem auto; /* Increased from 2rem */
+    right: auto;
+    top: auto;
+  }
+}
+
+.terminal-window {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 136, 0.2);
+  background-color: #0a1017;
+  font-family: 'Fira Code', monospace;
+  border: 1.5px solid rgba(0, 255, 136, 0.25);
+  transform: scale(1.05);
+}
+
+.terminal-header {
+  background-color: #252526;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #3c3c3c;
+  position: relative;
+  overflow: hidden;
+}
+
+.terminal-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00ff88, transparent);
+  animation: header-glow 3s infinite;
+}
+
+@keyframes header-glow {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-button {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.terminal-button:hover {
+  transform: scale(1.1);
+}
+
+.terminal-button.close {
+  background-color: #ff5f56;
+}
+
+.terminal-button.minimize {
+  background-color: #ffbd2e;
+}
+
+.terminal-button.maximize {
+  background-color: #27c93f;
+}
+
+.terminal-title {
+  color: #d8d8d8;
+  font-size: 15px;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.terminal-body {
+  padding: 18px;
+  height: 400px; /* Increased from 320px */
+  overflow-y: auto;
+  color: #00ff88 !important;
+  background-color: #0a1017;
+  scrollbar-width: thin;
+  scrollbar-color: #00ff88 #0a1017;
+  line-height: 1.6;
+  font-size: 16px;
+  text-align: left;
+}
+
+.terminal-body p {
+  margin: 0;
+  padding: 3px 0;
+  white-space: pre-line;
+}
+
+.terminal-input-container {
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  background-color: #0a1017;
+  border-top: 1px solid rgba(0, 255, 136, 0.1);
+}
+
+.terminal-prompt {
+  color: #00ff88;
+  margin-right: 10px;
+  font-weight: normal;
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  color: #00ff88;
+  font-family: 'Fira Code', monospace;
+  font-size: inherit;
+  outline: none;
+  width: calc(100% - 30px);
+  caret-color: transparent;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 18px;
+  background-color: #00ff88;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+  margin-left: 2px;
+  border-radius: 0;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.blinking-prompt {
+  color: #00ff88;
+  animation: blink 1s step-end infinite;
+  margin: 5px 0;
+}
+
+/* Command response styling */
+.command-response {
+  margin: 5px 0;
+}
+
+.error-message {
+  color: #ff5555;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 1024px) {
+  .hero-content-wrapper {
+    flex-direction: column;
+  }
+  
+  .text-content {
+    width: 100%;
+  }
+  
+  .terminal-container {
+    width: 90%;
+    max-width: 600px;
+    padding-right: 0;
+    margin: 2rem 0;
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .hero-content-wrapper {
+    flex-direction: column;
+  }
+  
+  .text-content {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  
+  .terminal-container {
+    width: 95%;
+    margin: 15px auto;
+  }
+  
+  .terminal-window {
+    width: 100%;
+  }
+  
+  .terminal-body {
+    height: 300px; /* Increased from 200px */
+    padding: 12px;
+    overflow: auto;
+  }
+  
+  .terminal-header {
+    padding: 8px;
+  }
+  
+  #info-para {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    padding: 0 5px;
+  }
+  
+  .letsTalkBtn {
+    width: 180px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #hello-friend, #name, #work {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  #work div {
+    margin: 0 3px;
+  }
+  
+  .jello {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .terminal-container {
+    width: 95%;
+    margin: 30px auto;
+  }
+  
+  .terminal-window {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(86, 156, 214, 0.3);
+    font-family: "Fira Code", monospace;
+    transform: perspective(800px) rotateX(5deg);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(140, 140, 140, 0.1);
+  }
+  
+  .terminal-window:hover {
+    transform: perspective(800px) rotateX(0);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(86, 156, 214, 0.4);
+  }
+  
+  .terminal-header {
+    background: linear-gradient(90deg, #0a1017, #121921);
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 255, 136, 0.3);
+  }
+  
+  .terminal-body {
+    height: 180px;
+    font-size: 14px;
+    padding: 15px;
+    background-color: rgba(10, 16, 23, 0.95);
+    background-image: radial-gradient(circle at 15% 15%, rgba(0, 255, 136, 0.05) 0%, transparent 20%),
+                      radial-gradient(circle at 85% 85%, rgba(0, 255, 136, 0.05) 0%, transparent 20%);
+  }
+  
+  .terminal-input {
+    font-size: 14px;
+    width: 80%;
+    caret-color: #00ff88;
+  }
+  
+  .terminal-input-container {
+    padding: 8px 12px;
+    background-color: rgba(10, 16, 23, 0.98);
+    border-top: 1px solid rgba(0, 255, 136, 0.2);
+  }
+  
+  .terminal-prompt {
+    color: #00ff88;
+    font-weight: bold;
+    margin-right: 8px;
+  }
+  
+  .terminal-cursor {
+    background-color: #00ff88;
+    box-shadow: 0 0 8px rgba(0, 255, 136, 0.7);
+  }
+  
+  #info-para {
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+}

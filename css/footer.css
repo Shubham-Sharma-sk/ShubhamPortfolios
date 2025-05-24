@@ -1,0 +1,128 @@
+/* Footer Avatar Styling /
+.footer-avatar-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  perspective: 1000px;
+  z-index: 50; / Ensure avatar is above other footer elements /
+}
+
+.footer-avatar-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+.footer-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+  border: 4px solid #8000ff; / Thicker border for visibility /
+  box-shadow: 0 0 20px rgba(128, 0, 255, 0.8); / Stronger glow effect /
+  background-color: rgba(25, 25, 35, 0.9); / Darker background for contrast /
+  transform: scale(1.05); / Slightly larger /
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-avatar-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(128, 0, 255, 1);
+}
+
+.footer-avatar-face {
+  position: absolute;
+  top: 42%; / Adjusted position to better match the avatar /
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10; / Ensure eyes are visible /
+}
+
+.footer-avatar-eye {
+  width: 22px;
+  height: 22px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8); / Add glow to eyes /
+}
+
+.footer-left-eye {
+  margin-right: 6px;
+}
+
+.footer-right-eye {
+  margin-left: 6px;
+}
+
+.footer-pupil {
+  width: 10px;
+  height: 10px;
+  background-color: #241010;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5); / Add depth to pupils /
+}
+
+/ Media queries for responsive avatar */
+@media screen and (max-width: 768px) {
+    .footer-avatar-container {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .footer-avatar-face {
+      width: 60px;
+      height: 16px;
+    }
+  
+    .footer-avatar-eye {
+      width: 16px;
+      height: 16px;
+    }
+  
+    .footer-pupil {
+      width: 7px;
+      height: 7px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .footer-avatar-container {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .footer-avatar-face {
+      width: 50px;
+      height: 14px;
+    }
+  
+    .footer-avatar-eye {
+      width: 14px;
+      height: 14px;
+    }
+  
+    .footer-pupil {
+      width: 6px;
+      height: 6px;
+    }
+  }

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#000" />
+  <title>Shubham Khandelwal | UI/UX & Web Dev Portfolio</title>
+  <meta name="description" content="UI/UX Designer and Web Developer with a background in DevOps engineering. Creating beautiful interfaces and seamless experiences.">
+  <meta name="keywords" content="UI/UX design, web development, DevOps, Ahmedabad, Gujarat, frontend developer" />
+  <meta property="og:title" content="Shubham Khandelwal | UI/UX & Web Dev Portfolio" />
+  <meta property="og:description" content="UI/UX Designer and Web Developer with DevOps engineering background. Creating beautiful interfaces and seamless experiences." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourwebsite.com" />
+  <meta property="og:image" content="https://yourwebsite.com/src/png/nav-avatar.png" />
+  <link rel="icon" type="image/x-icon" href="src/png/main-favicon.png" />
+  <link rel="stylesheet" href="css/contact-form-custom.css">
+  
+  <!-- AOS animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/timeline.css" />
+  <link rel="stylesheet" href="css/terminal.css" />
+  <link rel="stylesheet" href="css/contact-terminal.css" />
+  <link rel="stylesheet" href="css/hero-terminal.css" />
+  <link rel="stylesheet" href="css/cursor.css" />
+  <link rel="stylesheet" href="css/notification.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/terminal-suggestion.css" />
+  <link rel="stylesheet" href="css/enhanced-terminal.css" />
+  <link rel="stylesheet" href="css/terminal-colors.css" />
+  
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Passions+Conflict&family=Orbitron&family=Fira+Code&family=Six+Caps" />
+</head>
+
+<body class="body">
+  <audio loop="" id="audioPlayer" style="display: none">
+    <source src="src/mp3/preloader.mp3" type="audio/mp3" />
+  </audio>
+  <div id="preloader"></div>
+  <noscript>Allow Javascript</noscript>
+
+  <!-- Custom Cursor Elements -->
+  <div class="cursor-inner" id="cursor-inner"></div>
+  <div class="cursor-outer" id="cursor-outer"></div>
+
+  <!-- Header Component -->
+  <div id="header-component"></div>
+
+  <main>
+    <!-- Hamburger Menu Component -->
+    <div id="hamburger-component"></div>
+    
+    <!-- Hero Section with Terminal Component -->
+    <div id="hero-component"></div>
+    
+    <!-- About Section Component -->
+    <div id="about-component"></div>
+    
+    <!-- Experience Section Component -->
+    <div id="experience-component"></div>
+    
+    <!-- Skills Section Component -->
+    <div id="skills-component"></div>
+    
+    <!-- Projects Section Component -->
+    <div id="projects-component"></div>
+    
+    <!-- Contact Section Component -->
+    <div id="contact-component"></div>
+  </main>
+
+  <!-- Footer Component -->
+  <div id="footer-component"></div>
+
+  <!-- Scripts -->
+  <!-- Load Utilities First -->
+  <script src="js/main.js"></script>
+  <script src="js/cursor.js"></script>
+  
+  <!-- Then Component Loading -->
+  <script src="js/components.js"></script>
+  
+  <!-- Then Specific Components -->
+  <script src="js/terminal.js"></script>
+  <script src="js/terminal-suggestions.js"></script>
+  <script src="js/clear-fix.js"></script>
+  <script src="js/contact-form.js"></script>
+  <script src="js/hamburger-menu.js"></script>
+  
+  <!-- External Scripts Last -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      disable: 'mobile',
+      once: true,
+      duration: 800,
+      delay: 50
+    });
+  </script>
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="shubhamsk" data-description="Support me on Buy me a coffee!" data-message="" data-color="#BD5FFF" data-position="left" data-x_margin="18" data-y_margin="18"></script>
+  <script src="location-fix.js"></script>
+  <script src="force-location.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<section class="landing-page-container" id="home">
+  <div class="blob"></div>
+
+  <!-- Desktop version with floating terminal -->
+  <div class="hero-content-wrapper">
+    <div class="desktop-only">
+      <!-- Text content -->
+      <div class="text-content">
+        <article id="hello-friend" data-aos="fade-up" data-aos-delay="0">
+          <p class="jello">N</p>
+          <p class="jello">a</p>
+          <p class="jello">m</p>
+          <p class="jello">a</p>
+          <p class="jello">s</p>
+          <p class="jello">t</p>
+          <p class="jello">e</p>
+          <p class="jello">(</p>
+          <p class="jello">)</p>
+          <p class="jello">;</p>
+          &nbsp;
+          <p class="jello">I</p>
+          <p class="jello">'</p>
+          <p class="jello">m</p>
+        </article>
+        <article id="name" data-aos="fade-up" data-aos-delay="200">
+          <p class="jello">S</p>
+          <p class="jello">H</p>
+          <p class="jello">U</p>
+          <p class="jello">B</p>
+          <p class="jello">H</p>
+          <p class="jello">A</p>
+          <p class="jello">M</p>
+          &nbsp;
+          <p class="jello">K</p>
+          <p class="jello">h</p>
+          <p class="jello">a</p>
+          <p class="jello">n</p>
+          <p class="jello">d</p>
+          <p class="jello">e</p>
+          <p class="jello">l</p>
+          <p class="jello">w</p>
+          <p class="jello">a</p>
+          <p class="jello">l</p>
+          <p class="jello">.</p>
+        </article>
+
+        <article id="work" data-aos="fade-up" data-aos-delay="400">
+          <div>
+            <p class="jello">I</p>
+          </div>
+          <div>
+            <p class="jello">d</p>
+            <p class="jello">e</p>
+            <p class="jello">s</p>
+            <p class="jello">i</p>
+            <p class="jello">g</p>
+            <p class="jello">n</p>
+          </div>
+          <div>
+            <p class="jello">&</p>
+          </div>
+          <div>
+            <p class="jello">B</p>
+            <p class="jello">u</p>
+            <p class="jello">i</p>
+            <p class="jello">l</p>
+            <p class="jello">d</p>
+          </div>
+          <div>
+            <p class="jello">w</p>
+            <p class="jello">i</p>
+            <p class="jello">t</p>
+            <p class="jello">h</p>
+          </div>
+          <div>
+            <p class="jello">P</p>
+            <p class="jello">u</p>
+            <p class="jello">r</p>
+            <p class="jello">p</p>
+            <p class="jello">o</p>
+            <p class="jello">s</p>
+            <p class="jello">e</p>
+            <p class="jello">.</p>
+          </div>
+        </article>
+
+        <p id="info-para" data-aos="fade-up" data-aos-delay="600">
+          Hi there! I'm Shubham Khandelwal, a UI/UX Designer and Web Developer with a background in DevOps engineering. I specialize in creating beautiful interfaces and seamless digital experiences that both delight users and solve real problems.<br />
+          <br />
+          My design philosophy centers on intuitive interactions and visually engaging interfaces that elevate brands and enhance user engagement. My technical background in DevOps gives me a unique perspective on creating solutions that are not only beautiful but also scalable and maintainable.
+          <br>
+          If you're looking to build a new website with stunning design or revamp your current online presence, let's chat and turn your vision into reality!
+        </p>
+        <div class="contact-btn-div" data-aos="fade-up" data-aos-delay="800">
+          <a href="https://www.linkedin.com/in/shubhamsharmadevops%E2%98%81%EF%B8%8F/" tabindex="-1">
+            <button class="letsTalkBtn">
+              <p class="letsTalkBtn-text">Let's Talk!</p>
+              <span class="letsTalkBtn-BG"></span>
+            </button></a>
+          <div class="setting-container" id="setting-container">
+            <input type="checkbox" id="switchforsetting" onclick="settingtoggle()" />
+
+            <label for="switchforsetting" class="needtobeinvert" id="labelforsetting" tabindex="0"
+              aria-label="settings for sound and appearance"></label>
+
+            <div class="visualmodetogglebuttoncontainer" id="visualmodetogglebuttoncontainer">
+              <input type="checkbox" id="switchforvisualmode" onclick="visualmode()" />
+              <label for="switchforvisualmode" id="labelforvisualmode" tabindex="0"
+                aria-label="switch appearance"></label>
+            </div>
+
+            <div class="soundtogglebuttoncontainer" id="soundtogglebuttoncontainer">
+              <input type="checkbox" id="switchforsound" onclick="playpause()" />
+              <label for="switchforsound" id="labelforsound" tabindex="0" aria-label="switch sound"
+                class="needtobeinvert"></label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Floating terminal (visible in both desktop and mobile) -->
+    <div class="terminal-container">
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="terminal-button close"></span>
+            <span class="terminal-button minimize"></span>
+            <span class="terminal-button maximize"></span>
+          </div>
+          <div class="terminal-title">shubham@portfolio:~</div>
+        </div>
+        <div class="terminal-body" id="hero-terminal-history">
+          <!-- Terminal content will be added dynamically via JavaScript -->
+        </div>
+        <div class="terminal-input-container">
+          <span class="terminal-prompt">></span>
+          <input type="text" id="hero-terminal-input" class="terminal-input" spellcheck="false">
+          <span class="terminal-cursor"></span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile version - simplified layout (shows only when in mobile view) -->
+    <div class="mobile-only">
+      <div class="text-content mobile-text">
+        <h1 class="mobile-greeting">Namaste(); I'm SHUBHAM Khandelwal.</h1>
+        <h2 class="mobile-tagline">I design & Build with Purpose.</h2>
+        <p class="mobile-info">
+          Hi there! I'm Shubham Khandelwal, a UI/UX Designer and Web Developer with a background in DevOps engineering. I specialize in creating beautiful interfaces and seamless digital experiences.
+        </p>
+        <div class="mobile-buttons">
+          <a href="https://www.linkedin.com/in/shubhamsharmadevops%E2%98%81%EF%B8%8F/" tabindex="-1">
+            <button class="letsTalkBtn">
+              <p class="letsTalkBtn-text">Let's Talk!</p>
+              <span class="letsTalkBtn-BG"></span>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

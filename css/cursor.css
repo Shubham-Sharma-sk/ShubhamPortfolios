@@ -1,0 +1,58 @@
+/* Custom Cursor Styles */
+.cursor-inner {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #bd5fff;
+    z-index: 99999;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s;
+    opacity: 0; /* Start hidden, JS will show it */
+  }
+  
+  .cursor-outer {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(189, 95, 255, 0.5);
+    z-index: 99998;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: 0.1s ease-out;
+    opacity: 0; /* Start hidden, JS will show it */
+  }
+  
+  .cursor-inner.hover {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    mix-blend-mode: difference;
+  }
+  
+  .cursor-outer.hover {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  
+  /* Hide default cursor when custom cursor is active */
+  html.custom-cursor,
+  html.custom-cursor body,
+  html.custom-cursor a,
+  html.custom-cursor button {
+    cursor: none !important;
+  }
+  
+  /* Show default cursor on mobile devices */
+  @media (max-width: 768px) {
+    .cursor-inner, .cursor-outer {
+      display: none !important;
+    }
+    
+    html, body, a, button {
+      cursor: auto !important;
+    }
+  }

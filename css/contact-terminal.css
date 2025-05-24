@@ -1,0 +1,151 @@
+/* Contact Terminal Layout Styles */
+.contact-content {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contact-left-column {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-right-column {
+  width: 40%;
+  max-width: 500px;
+  min-width: 450px;
+}
+
+.terminal-input-container {
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  background-color: #191c2a;
+  border-top: 1px solid rgba(137, 221, 255, 0.1);
+}
+
+/* Floating Effect for Terminal */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.terminal-container {
+  animation: float 6s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+/* Terminal Technology Line Effect */
+.tech-line {
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 6px 0;
+  color: #8be9fd;
+}
+
+.tech-line-command {
+  color: #bd93f9;
+}
+
+.tech-line-result {
+  color: #50fa7b;
+}
+
+.tech-line-error {
+  color: #ff5555;
+}
+
+.tech-line-comment {
+  color: #6272a4;
+}
+
+.tech-line-highlight {
+  background-color: rgba(189, 147, 249, 0.15);
+  padding: 2px 0;
+}
+
+/* Matrix Rain Effect */
+.matrix-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.05;
+}
+
+.rain-drop {
+  position: absolute;
+  color: #0f0;
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0;
+  animation: rain-fall linear infinite;
+}
+
+@keyframes rain-fall {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 1200px) {
+  .contact-content {
+    flex-direction: column;
+  }
+  
+  .contact-left-column,
+  .contact-right-column {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  
+  .terminal-container {
+    margin: 30px 0;
+    animation: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .terminal-header-tabs {
+    display: none;
+  }
+  
+  .terminal-sidebar {
+    display: none;
+  }
+  
+  .terminal-dual-layout {
+    display: block;
+  }
+  
+  .terminal-body {
+    height: 300px;
+  }
+}

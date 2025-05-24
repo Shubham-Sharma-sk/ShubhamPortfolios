@@ -1,0 +1,20 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Shubham Khandelwal's Portfolio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node start.js",
+    "server": "node server.js",
+    "client": "live-server --port=8080 --no-browser"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "nodemailer": "^6.10.1"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

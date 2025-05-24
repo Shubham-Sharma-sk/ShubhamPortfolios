@@ -1,0 +1,147 @@
+
+    /* Logo Portfolio Specific Styles */
+    .dark-theme-box {
+      background-color: #161125 !important;
+      border-radius: 30px !important;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05) !important;
+      padding: 40px !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .logo-portfolio-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+    
+    .logo-info {
+      width: 32%;
+      padding-right: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    
+    .logo-heading {
+      color: #FFFFFF !important;
+      font-size: 3.0rem;
+      font-weight: 600;
+      margin: 0 0 20px 0;
+      line-height: 1.2;
+      position: relative;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      -webkit-text-fill-color: white !important;
+      background-image: none !important;
+      background-clip: text !important;
+      -webkit-background-clip: text !important;
+    }
+    
+    .dot {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background-color: #00ffff;
+      border-radius: 50%;
+      margin-left: 5px;
+      margin-bottom: 2px;
+    }
+    
+    .logo-description {
+      color: #a0a0b8;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    
+    .view-portfolio-btn {
+      display: inline-flex;
+      align-items: center;
+      background-color: #111111;
+      color: white;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      margin-top: auto;
+      align-self: flex-start;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .view-portfolio-btn:hover {
+      background-color: #222222;
+      transform: translateY(-3px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .logo-grid {
+      width: 68%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    .logo-item {
+      background-color: #1D1832;
+      border-radius: 15px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      aspect-ratio: 16/9;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .logo-item img {
+      max-width: 65%;
+      max-height: 65%;
+      object-fit: contain;
+    }
+    
+    .dollar-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .dollar-sign {
+      font-size: 3.5rem;
+      color: #0088ff;
+      font-weight: bold;
+    }
+    
+    @media screen and (max-width: 992px) {
+      .logo-portfolio-container {
+        flex-direction: column;
+      }
+      
+      .logo-info {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 30px;
+      }
+      
+      .logo-grid {
+        width: 100%;
+      }
+    }
+    
+    @media screen and (max-width: 768px) {
+      .dark-theme-box {
+        padding: 30px !important;
+      }
+      
+      .logo-heading {
+        font-size: 2rem;
+      }
+      
+      .logo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  

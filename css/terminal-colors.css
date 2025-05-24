@@ -1,0 +1,102 @@
+/* Terminal Colors Override - Black background with white text */
+
+/* Terminal background color */
+.terminal-window {
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.terminal-body {
+  background-color: #000000 !important; /* Black background */
+  color: #ffffff !important; /* White text */
+  scrollbar-color: #ffffff #000000;
+  font-size: 18px !important; /* Larger text */
+  line-height: 1.8 !important;
+}
+
+.terminal-header {
+  background: linear-gradient(90deg, #111111, #000000);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.terminal-input-container {
+  background-color: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Terminal text elements */
+.terminal-prompt,
+.blinking-prompt,
+.terminal-cursor,
+.terminal-input {
+  color: #ffffff;
+  font-size: 18px !important;
+}
+
+/* Extra large text for the 'see more' prompt */
+.terminal-line:contains('see more') {
+  font-size: 22px !important;
+  font-weight: bold !important;
+  margin: 10px 0 !important;
+  color: #ffffff !important;
+}
+
+.terminal-cursor {
+  background-color: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  height: 20px; /* Taller cursor for larger text */
+}
+
+/* Terminal suggestions */
+.terminal-suggestions {
+  background-color: rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+  font-size: 16px !important;
+}
+
+.suggestion-item:hover,
+.suggestion-item.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-left: 3px solid #ffffff;
+}
+
+.suggestion-icon {
+  color: #ffffff;
+  font-size: 18px !important;
+}
+
+.highlighted-text {
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+  font-size: 18px !important;
+}
+
+/* Terminal body background */
+@media screen and (max-width: 375px) {
+  .terminal-window {
+    background-color: #000000;
+  }
+  
+  .terminal-body {
+    background-color: #000000;
+    background-image: radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.05) 0%, transparent 20%),
+                      radial-gradient(circle at 85% 85%, rgba(255, 255, 255, 0.05) 0%, transparent 20%);
+    font-size: 16px !important; /* Slightly smaller on mobile but still larger than default */
+  }
+  
+  .terminal-input-container {
+    background-color: rgba(0, 0, 0, 0.98);
+  }
+  
+  /* Increase size of terminal on mobile */
+  .terminal-container {
+    width: 100% !important;
+  }
+  
+  /* Ensure terminal text is readable on mobile */
+  .terminal-line, .terminal-prompt, .terminal-input {
+    font-size: 16px !important;
+  }
+}

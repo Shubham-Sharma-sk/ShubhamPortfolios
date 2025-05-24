@@ -1,0 +1,375 @@
+/* Enhanced Terminal Styles */
+
+/* Terminal typing indicator */
+.terminal-typing-indicator {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 14px;
+  background-color: #569cd6;
+  animation: blink 1s infinite;
+  display: none;
+  box-shadow: 0 0 5px rgba(0, 255, 136, 0.7);
+  border-radius: 1px;
+}
+
+/* Terminal window enhancements */
+.terminal-window {
+  transform: perspective(800px) rotateX(2deg);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1.5px solid rgba(0, 255, 136, 0.25);
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.5), 
+    0 0 15px rgba(0, 255, 136, 0.2),
+    inset 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.terminal-window:hover {
+  transform: perspective(800px) rotateX(0deg);
+  border: 1.5px solid rgba(0, 255, 136, 0.4);
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.5), 
+    0 0 20px rgba(0, 255, 136, 0.3),
+    inset 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Terminal header with glowing effect */
+.terminal-header {
+  background: linear-gradient(90deg, #0a1017, #121921);
+  border-bottom: 1px solid rgba(0, 255, 136, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.terminal-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #569cd6, transparent);
+  animation: header-glow 3s infinite;
+}
+
+@keyframes header-glow {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+/* Terminal buttons with hover effects */
+.terminal-button {
+  transition: all 0.3s ease;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.terminal-button:hover {
+  transform: scale(1.2);
+}
+
+.terminal-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.terminal-button:active::after {
+  width: 120%;
+  height: 120%;
+  opacity: 0.3;
+}
+
+/* Terminal body with background patterns */
+.terminal-body {
+  background-color: rgba(10, 16, 23, 0.95);
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(0, 255, 136, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 85% 85%, rgba(0, 255, 136, 0.05) 0%, transparent 20%);
+  padding: 18px;
+  scrollbar-width: thin;
+  scrollbar-color: #569cd6 #0a1017;
+}
+
+/* Improved suggestions container */
+.terminal-suggestions {
+  max-height: 200px;
+  background-color: rgba(20, 26, 33, 0.95);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 255, 136, 0.5) rgba(20, 26, 33, 0.5);
+  z-index: 100;
+}
+
+/* Suggestion item styling */
+.suggestion-item {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.suggestion-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+  transition: all 0.5s ease;
+}
+
+.suggestion-item:hover::before {
+  left: 100%;
+}
+
+.suggestion-item:hover {
+  background-color: rgba(0, 255, 136, 0.1);
+}
+
+.suggestion-item.active {
+  background-color: rgba(0, 255, 136, 0.15);
+  border-left: 3px solid #569cd6;
+}
+
+.suggestion-item.selected {
+  animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+  0% { background-color: rgba(0, 255, 136, 0.1); }
+  50% { background-color: rgba(0, 255, 136, 0.3); }
+  100% { background-color: rgba(0, 255, 136, 0.1); }
+}
+
+/* Icons and text in suggestions */
+.suggestion-icon {
+  margin-right: 10px;
+  color: #569cd6;
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+
+.suggestion-text {
+  flex: 1;
+  color: #eee;
+}
+
+.suggestion-description {
+  font-size: 12px;
+  color: #77a893;
+  margin-left: 10px;
+  opacity: 0.7;
+}
+
+/* Highlighted text in suggestions */
+.highlighted-text {
+  color: #569cd6;
+  font-weight: bold;
+  text-shadow: 0 0 3px rgba(0, 255, 136, 0.5);
+}
+
+/* Command color categories */
+.command-help { color: #4ec9b0; }
+.command-about { color: #b5cea8; }
+.command-skills { color: #c586c0; }
+.command-experience { color: #dcdcaa; }
+.command-projects { color: #9cdcfe; }
+.command-contact { color: #ce9178; }
+.command-clear { color: #d16969; }
+.command-navigate { color: #569cd6; }
+.command-system { color: #8c8c8c; }
+.command-explore { color: #f7ca88; }
+
+/* Input preview for suggestions */
+.input-preview {
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(0, 255, 136, 0.4);
+  pointer-events: none;
+  font-family: 'Fira Code', monospace;
+  z-index: 0;
+}
+
+/* Terminal lines styling */
+.terminal-line {
+  padding: 2px 0;
+  transition: opacity 0.3s ease;
+}
+
+.terminal-line.command {
+  color: #eee;
+  font-weight: bold;
+}
+
+.terminal-line.system {
+  color: #569cd6;
+  font-style: italic;
+}
+
+/* Terminal prompt styling */
+.terminal-prompt {
+  color: #569cd6;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+.terminal-prompt-line {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+/* Terminal input container */
+.terminal-input-container {
+  background-color: rgba(10, 16, 23, 0.98);
+  border-top: 1px solid rgba(0, 255, 136, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.terminal-input-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.3), transparent);
+}
+
+/* Scrollbar styling */
+.terminal-body::-webkit-scrollbar,
+.terminal-suggestions::-webkit-scrollbar {
+  width: 6px;
+}
+
+.terminal-body::-webkit-scrollbar-track,
+.terminal-suggestions::-webkit-scrollbar-track {
+  background: rgba(20, 20, 20, 0.8);
+  border-radius: 3px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb,
+.terminal-suggestions::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 136, 0.3);
+  border-radius: 3px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb:hover,
+.terminal-suggestions::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 136, 0.5);
+}
+
+/* Terminal glow effect on focus */
+.terminal-window:focus-within {
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.5), 
+    0 0 20px rgba(0, 255, 136, 0.3),
+    inset 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* New command animation */
+@keyframes command-appear {
+  from { 
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.terminal-line {
+  animation: command-appear 0.3s ease;
+}
+
+/* System message styling */
+.system-message {
+  color: #569cd6;
+  font-style: italic;
+}
+
+/* Mobile optimization */
+@media screen and (max-width: 768px) {
+  .terminal-body {
+    height: 250px;
+    padding: 12px;
+  }
+  
+  .terminal-suggestions {
+    max-height: 150px;
+  }
+  
+  .suggestion-item {
+    padding: 6px 10px;
+  }
+  
+  .suggestion-description {
+    display: none;
+  }
+  
+  /* Fix navigation buttons in mobile view */
+  .mobile-only .setting-container,
+  .mobile-only .visualmodetogglebuttoncontainer,
+  .mobile-only .soundtogglebuttoncontainer {
+    display: none; /* Hide duplicate buttons in mobile view */
+  }
+  
+  .desktop-only .setting-container,
+  .desktop-only .visualmodetogglebuttoncontainer,
+  .desktop-only .soundtogglebuttoncontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 20px;
+  }
+  
+  /* Ensure buttons are visible and properly spaced */
+  #labelforsetting,
+  #labelforvisualmode,
+  #labelforsound {
+    display: block;
+    margin: 0 10px;
+  }
+  
+  /* Ensure mobile version has proper spacing */
+  .mobile-text {
+    padding: 0 15px;
+    margin-bottom: 30px;
+  }
+  
+  /* Improve mobile buttons display */
+  .mobile-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 15px;
+  }
+}

@@ -1,0 +1,121 @@
+/* Terminal positioning and display fixes */
+
+/* Make sure the hero terminal is properly positioned */
+.hero-content-wrapper .terminal-container {
+  position: relative;
+  display: block !important;
+  z-index: 10;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Ensure the terminal window looks good */
+.terminal-window {
+  background-color: rgba(30, 30, 40, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  font-family: 'Fira Code', monospace;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make sure terminal body has correct height */
+.terminal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  background-color: rgba(30, 30, 40, 0.95);
+  color: #f8f8f2;
+  font-size: 14px;
+  line-height: 1.5;
+  max-height: 240px;
+}
+
+/* Fix terminal input positioning */
+.terminal-input-container {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: rgba(30, 30, 40, 0.98);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Fix terminal prompt */
+.terminal-prompt {
+  color: #bd5fff;
+  margin-right: 8px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* Fix terminal input */
+.terminal-input {
+  background: transparent;
+  border: none;
+  color: #f8f8f2;
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+  outline: none;
+  flex: 1;
+}
+
+/* Fix cursor styling */
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background-color: #bd5fff;
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+  vertical-align: middle;
+}
+
+/* Blink animation for cursor */
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Highlight color for suggestions */
+.suggestion-highlight {
+  color: rgba(189, 95, 255, 0.6);
+}
+
+/* Ensure terminal is responsive */
+@media (max-width: 768px) {
+  .hero-content-wrapper .terminal-container {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .terminal-window {
+    height: 280px;
+  }
+  
+  .terminal-body {
+    max-height: 200px;
+  }
+}
+
+/* Fix terminal positioning in desktop layout */
+@media (min-width: 769px) {
+  .hero-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .desktop-only {
+    width: 55%;
+    padding-right: 30px;
+  }
+  
+  .hero-content-wrapper .terminal-container {
+    width: 45%;
+    margin: 0;
+  }
+}

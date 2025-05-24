@@ -91,8 +91,13 @@ app.post('/send-email', async (req, res) => {
   }
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`API server running at http://localhost:${PORT}`);
-  console.log('Ready to receive contact form submissions');
-});
+// Start server when running locally, not on Vercel
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`API server running at http://localhost:${PORT}`);
+    console.log('Ready to receive contact form submissions');
+  });
+}
+
+// Export for Vercel serverless function
+module.exports = app;

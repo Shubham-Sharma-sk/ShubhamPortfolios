@@ -20,6 +20,29 @@
   top: auto !important;
 }
 
+/* Hide terminal in contact section */
+.contact-right-column {
+  display: none !important;
+}
+
+/* Add extra space to contact section layout after hiding terminal */
+.contact-left-column {
+  width: 100% !important;
+}
+
+.contact-horizontal-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.contact-form-container, 
+.get-in-touch-container {
+  flex: 1;
+  min-width: 300px;
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 1024px) {
   .hero-content-wrapper {

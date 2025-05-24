@@ -1,4 +1,6 @@
 // Standalone script to force location display - add this to your HTML
+// Check if we're in a browser environment first
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
 (function() {
   // Run the fix immediately and multiple times with delays
   fixLocation();
@@ -216,3 +218,4 @@
     console.log('✅ Added emergency override styles');
   }
 })();
+}

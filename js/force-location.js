@@ -1,5 +1,7 @@
-// Direct script to force the address to show up
-document.addEventListener('DOMContentLoaded', function() {
+// Check if we're in a browser environment
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+  // Direct script to force the address to show up
+  document.addEventListener('DOMContentLoaded', function() {
   // Add a small delay to make sure the DOM is fully loaded
   setTimeout(function() {
     console.log('🔍 Force-location script running...');
@@ -99,4 +101,5 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('⚠️ Added location directly to body as fallback');
     }
   }, 1000); // 1 second delay
-});
+  });
+}
